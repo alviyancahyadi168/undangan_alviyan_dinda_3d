@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f0e7">
+<title>Alviyan & Dinda — 3D Memories</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+:root{--cream:#f8f3eb;--paper:#fffdf9;--gold:#a9793b;--ink:#332821;--rose:#d97c86}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--ink);font-family:Montserrat,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#9c7b58 0.45px,transparent .45px);background-size:8px 8px;z-index:20}
+.scene{min-height:100vh;position:relative;display:grid;place-items:center;overflow:hidden}
+.hero{perspective:1200px;background:radial-gradient(circle at 50% 30%,#fffdf9 0,#f7efe5 48%,#eadcc9 100%)}
+.hero .glow{position:absolute;width:55vw;height:55vw;border-radius:50%;background:rgba(255,255,255,.55);filter:blur(50px)}
+.card3d{width:min(88vw,680px);min-height:620px;position:relative;transform-style:preserve-3d;transition:transform .18s ease-out;display:flex;align-items:center;justify-content:center}
+.card{width:min(82vw,590px);padding:70px 35px 55px;text-align:center;background:rgba(255,253,249,.88);border:1px solid rgba(169,121,59,.3);box-shadow:0 35px 90px rgba(79,56,31,.18);backdrop-filter:blur(8px);transform:translateZ(80px);position:relative}
+.orn{font-size:22px;color:var(--gold);letter-spacing:7px}.eyebrow{font-size:11px;letter-spacing:5px;color:var(--gold);margin:20px 0}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:600}
+h1{font-size:clamp(60px,10vw,105px);line-height:.82;margin:8px 0 18px;color:#9b6b35}
+.names{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#67584d}
+.date{margin-top:34px;font-family:"Cormorant Garamond",serif;font-size:25px}
+.open{margin-top:42px;border:1px solid var(--gold);background:transparent;color:#80582b;padding:14px 28px;border-radius:40px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.3s}
+.open:hover{background:#a9793b;color:white;transform:translateY(-2px)}
+.floating{position:absolute;transform-style:preserve-3d;opacity:.8}.spark{color:var(--gold);font-size:28px}
+.s1{left:8%;top:17%;transform:translateZ(20px) rotate(-12deg)}.s2{right:9%;top:23%;transform:translateZ(30px) rotate(10deg)}.s3{left:14%;bottom:17%;transform:translateZ(50px)}.s4{right:13%;bottom:14%;transform:translateZ(40px)}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:4px;color:#8c7358}
+.scroll:after{content:"";display:block;width:1px;height:38px;background:#a9793b;margin:10px auto 0;opacity:.7}
+.section{padding:110px 7vw;background:var(--cream)}
+.section-head{text-align:center;max-width:700px;margin:0 auto 65px}.section-head .eyebrow{margin-bottom:8px}.section-head h2{font-size:clamp(45px,7vw,78px);margin:0;color:#91622f}.section-head p{line-height:1.8;color:#6e6259}
+.gallery{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(12,1fr);gap:30px;perspective:1400px}
+.polaroid{grid-column:span 4;background:white;padding:12px 12px 48px;box-shadow:0 22px 45px rgba(65,46,28,.15);transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;position:relative}
+.polaroid img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.polaroid .caption{position:absolute;bottom:15px;left:0;right:0;text-align:center;font-family:"Cormorant Garamond",serif;font-size:19px;color:#72573a}
+.polaroid:nth-child(1){grid-column:2/span 4;transform:rotate(-3deg)}.polaroid:nth-child(2){transform:rotate(2.5deg) translateY(25px)}.polaroid:nth-child(3){transform:rotate(-1.5deg) translateY(-5px)}
+.polaroid:nth-child(4){grid-column:1/span 4;transform:rotate(2deg)}.polaroid:nth-child(5){transform:rotate(-3deg) translateY(25px)}.polaroid:nth-child(6){transform:rotate(1.5deg)}.polaroid:nth-child(7){grid-column:3/span 4;transform:rotate(-2deg) translateY(20px)}.polaroid:nth-child(8){transform:rotate(3deg)}
+.polaroid:hover{transform:rotate(0) translateY(-14px) translateZ(30px) scale(1.025);box-shadow:0 35px 70px rgba(65,46,28,.24);z-index:3}
+.story{background:#30251f;color:#f8eee2;min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 8vw;position:relative}
+.story:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(205,157,94,.22),transparent 45%)}
+.story-inner{position:relative;max-width:800px}.story h2{font-size:clamp(52px,8vw,92px);margin:0;color:#e7c899}.story p{font-family:"Cormorant Garamond",serif;font-size:26px;line-height:1.6;color:#eee0d1}
+.footer{text-align:center;padding:80px 20px;background:#f1e6d7}.footer h2{font-size:55px;color:#94652f;margin:0}.footer p{letter-spacing:2px;font-size:11px;color:#756353}
+@media(max-width:800px){
+ .card{min-height:560px;padding-top:60px}.gallery{display:block}.polaroid,.polaroid:nth-child(n){width:min(86vw,430px);margin:0 auto 42px;transform:rotate(-1deg)}
+ .polaroid:nth-child(even){transform:rotate(1.5deg)}.section{padding:85px 6vw}
+}
+</style>
+</head>
+<body>
+<section class="scene hero" id="home">
+  <div class="glow"></div>
+  <div class="floating spark s1">✦</div><div class="floating spark s2">✧</div>
+  <div class="floating spark s3">✦</div><div class="floating spark s4">♡</div>
+  <div class="card3d" id="heroCard">
+    <div class="card">
+      <div class="orn">✦ &nbsp; ♡ &nbsp; ✦</div>
+      <div class="eyebrow">A JOURNEY OF LOVE</div>
+      <h1>Alviyan<br>&amp; Dinda</h1>
+      <div class="names">Memories • Laughter • Forever</div>
+      <div class="date">Our story, beautifully remembered.</div>
+      <button class="open" onclick="document.querySelector('#memories').scrollIntoView({behavior:'smooth'})">Buka Memories</button>
+      <div class="orn" style="margin-top:38px">⌁</div>
+    </div>
+  </div>
+  <div class="scroll">SCROLL TO EXPLORE</div>
+</section>
+
+<section class="section" id="memories">
+  <div class="section-head">
+    <div class="eyebrow">MEMORIES</div>
+    <h2>Our Little World</h2>
+    <p>Beberapa potongan cerita Alviyan &amp; Dinda — dibuat sebagai galeri foto 3D yang hidup saat Anda menjelajahinya.</p>
+  </div>
+  <div class="gallery">
+    <figure class="polaroid"><img src="assets/memory-1.jpeg"><figcaption class="caption">Always Better Together</figcaption></figure>
+    <figure class="polaroid"><img src="assets/memory-2.png"><figcaption class="caption">Prewed in Kota Tua</figcaption></figure>
+    <figure class="polaroid"><img src="assets/memory-3.png"><figcaption class="caption">Prewed in Beach</figcaption></figure>
+    <figure class="polaroid"><img src="assets/memory-4.jpeg"><figcaption class="caption">Love You!</figcaption></figure>
+    <figure class="polaroid"><img src="assets/memory-5.jpeg"><figcaption class="caption">Quality Time Together</figcaption></figure>
+    <figure class="polaroid"><img src="assets/memory-6.jpeg"><figcaption class="caption">Always Better Together</figcaption></figure>
+    <figure class="polaroid"><img src="assets/memory-7.jpeg"><figcaption class="caption">Best Day Ever</figcaption></figure>
+    <figure class="polaroid"><img src="assets/memory-8.jpeg"><figcaption class="caption">A Lifetime Together</figcaption></figure>
+  </div>
+</section>
+
+<section class="story">
+ <div class="story-inner">
+  <div class="eyebrow">THE NEXT CHAPTER</div>
+  <h2>From Memories<br>to Forever</h2>
+  <p>Setiap perjalanan memiliki cerita. Dan cerita kita akan terus berlanjut, menuju satu hari yang paling dinanti.</p>
+ </div>
+</section>
+
+<footer class="footer">
+ <h2>Alviyan &amp; Dinda</h2>
+ <p>WITH LOVE • 2026</p>
+</footer>
+
+<script>
+const hero=document.getElementById('heroCard');
+const heroScene=document.querySelector('.hero');
+heroScene.addEventListener('pointermove',e=>{
+  const r=heroScene.getBoundingClientRect();
+  const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+  hero.style.transform=`rotateY(${x*9}deg) rotateX(${-y*8}deg)`;
+});
+heroScene.addEventListener('pointerleave',()=>hero.style.transform='rotateY(0) rotateX(0)');
+
+document.querySelectorAll('.polaroid').forEach((card)=>{
+  card.addEventListener('pointermove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(900px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-8px)`;
+  });
+  card.addEventListener('pointerleave',()=>card.style.transform='');
+});
+</script>
+</body>
+</html>
