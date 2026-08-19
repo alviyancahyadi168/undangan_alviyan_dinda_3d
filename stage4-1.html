@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f0e7">
+<title>Alviyan & Dinda — Stage 4.1</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+:root{--cream:#f6efe5;--paper:#fffdf9;--gold:#ad7a39;--gold2:#d9b879;--ink:#3a2d24;--blue:#a9c2d0;--blue2:#dce8ed;--shadow:rgba(55,38,24,.22)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Montserrat,sans-serif;color:var(--ink)}body{background:radial-gradient(circle at 50% 25%,#fffdf9 0,#f7efe5 45%,#e8d9c6 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:radial-gradient(#9c7b58 .45px,transparent .45px);background-size:8px 8px;z-index:20}
+.page{min-height:100vh;display:grid;place-items:center;padding:40px 20px;position:relative;overflow:hidden}.glow{position:absolute;width:60vw;height:60vw;border-radius:50%;background:rgba(255,255,255,.65);filter:blur(70px);animation:glow 6s ease-in-out infinite}.ornament{position:absolute;color:var(--gold);font-size:34px;opacity:.7}.o1{left:7%;top:12%;transform:rotate(-12deg)}.o2{right:7%;top:20%;transform:rotate(14deg)}.o3{left:11%;bottom:12%}.o4{right:10%;bottom:10%;transform:rotate(-12deg)}
+.stage-label{position:absolute;top:30px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:4px;color:#8c704f;text-transform:uppercase;z-index:5;white-space:nowrap}.scene{width:min(92vw,1120px);height:min(78vh,720px);min-height:520px;perspective:2400px;position:relative;display:grid;place-items:center;z-index:2}.book{width:min(90vw,980px);height:min(72vh,620px);min-height:470px;position:relative;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 35px 45px var(--shadow))}.inside{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;border-radius:9px;overflow:hidden;transform-style:preserve-3d;background:var(--paper);box-shadow:0 18px 50px rgba(62,42,25,.15)}
+.page-face{position:relative;overflow:hidden;background:linear-gradient(145deg,#fffdf9,#f8f3eb);padding:52px 46px}.page-face:before{content:"";position:absolute;inset:15px;border:1px solid rgba(173,122,57,.18);pointer-events:none}.page-face:after{content:"";position:absolute;width:380px;height:380px;border:1px solid rgba(169,198,211,.35);border-radius:50%;top:-210px;left:-190px;box-shadow:0 0 80px rgba(255,255,255,.8)}.left-page{border-right:1px solid rgba(173,122,57,.16)}.seal{text-align:center;color:var(--gold);font-size:21px;letter-spacing:8px;position:relative;z-index:2}.kicker{text-align:center;font-size:10px;letter-spacing:4px;color:#9a6a35;margin:18px 0 25px;position:relative;z-index:2}.names{font:600 clamp(55px,7vw,90px)/.76 "Cormorant Garamond",serif;text-align:center;color:#a87438;position:relative;z-index:2}.date{text-align:center;margin:30px 0;font:500 20px "Cormorant Garamond",serif;letter-spacing:4px;color:#76583b;position:relative;z-index:2}.divider{height:1px;width:70%;margin:20px auto;background:linear-gradient(90deg,transparent,#bd8e52,transparent);position:relative;z-index:2}.note{text-align:center;max-width:430px;margin:30px auto 0;font:400 18px/1.65 "Cormorant Garamond",serif;color:#67594f;position:relative;z-index:2}
+.invite-kicker{text-align:center;font-size:9px;letter-spacing:2.5px;line-height:1.8;color:#765f4c;position:relative;z-index:2}.parents{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center;margin:24px 0;position:relative;z-index:2}.parents strong{font-size:8px;letter-spacing:2px;color:#a16f37}.parents p{font-size:9px;line-height:1.7;color:#65594f;margin:8px 0 0}.couple{text-align:center;position:relative;z-index:2}.person{font:500 26px/1.1 "Cormorant Garamond",serif;color:#9b6934;margin:8px 0}.schedule{text-align:center;font-size:8px;letter-spacing:1.8px;color:#806346;margin:23px 0 12px;position:relative;z-index:2}.schedule-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(173,122,57,.18);border-bottom:1px solid rgba(173,122,57,.18);position:relative;z-index:2}.item{text-align:center;padding:13px 5px;min-height:92px}.item+.item{border-left:1px solid rgba(173,122,57,.18)}.item b{display:block;font-size:8px;letter-spacing:1.4px;color:#8d673f;text-transform:uppercase}.item span{display:block;font-size:9px;line-height:1.5;color:#5f554d;margin-top:7px}.venue{text-align:center;margin-top:17px;position:relative;z-index:2}.venue strong{display:block;font:600 21px "Cormorant Garamond",serif;color:#875b2e}.venue span{display:block;font-size:8px;line-height:1.6;color:#6b5e55;margin-top:4px}.closing{text-align:center;font-size:8.5px;line-height:1.7;color:#675b52;margin-top:16px;position:relative;z-index:2}
+.cover{position:absolute;inset:0;width:50%;height:100%;left:0;z-index:4;transform-origin:right center;transform-style:preserve-3d;transition:transform 1.25s cubic-bezier(.22,.8,.2,1);cursor:pointer}.cover-front,.cover-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:9px 0 0 9px;overflow:hidden}.cover-front{background:linear-gradient(135deg,#e9eef0 0%,#fffdf9 43%,#f3e5d2 100%);border:1px solid rgba(173,122,57,.28);box-shadow:inset 0 0 0 14px rgba(255,253,249,.18)}.cover-front:before{content:"";position:absolute;inset:18px;border:1px solid rgba(173,122,57,.2)}.cover-front:after{content:"";position:absolute;width:160%;height:80%;left:-30%;top:10%;background:radial-gradient(ellipse at center,rgba(255,255,255,.95),transparent 63%);opacity:.9}.cover-back{background:linear-gradient(145deg,#eee4d6,#fffdf9);transform:rotateY(180deg);border:1px solid rgba(173,122,57,.16)}.cover-inner{height:100%;display:grid;place-items:center;text-align:center;padding:35px;position:relative;z-index:2}.cover-inner .mini{font-size:9px;letter-spacing:4px;color:#9a6a35}.cover-inner h1{font:600 clamp(58px,8vw,96px)/.72 "Cormorant Garamond",serif;color:#a87538;margin:25px 0}.cover-inner .heart{color:var(--gold);font-size:23px;letter-spacing:6px}.cover-inner .cover-date{font-size:10px;letter-spacing:4px;color:#76583b}.cover-inner .flourish{position:absolute;inset:55px;border:1px solid rgba(173,122,57,.16);pointer-events:none}.cover.opened{transform:rotateY(-172deg)}
+.spine{position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(transparent,rgba(130,91,45,.35),transparent);z-index:3;transform:translateX(-50%);pointer-events:none}.hint{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:3px;color:#8d7359;text-transform:uppercase;z-index:6;text-align:center;white-space:nowrap}.controls{position:absolute;bottom:58px;left:50%;transform:translateX(-50%);z-index:7;display:flex;gap:10px}.btn{border:1px solid var(--gold);background:rgba(255,253,249,.75);color:#80582b;padding:11px 20px;border-radius:30px;letter-spacing:1.8px;text-transform:uppercase;font-size:9px;cursor:pointer;backdrop-filter:blur(8px);transition:.25s}.btn:hover{background:var(--gold);color:#fff;transform:translateY(-2px)}
+@keyframes glow{0%,100%{transform:scale(.94);opacity:.65}50%{transform:scale(1.06);opacity:.95}}
+@media(max-width:760px){.page{padding:55px 10px 30px}.scene{width:96vw;height:680px;min-height:600px}.book{width:94vw;height:570px;min-height:0}.inside{grid-template-columns:1fr;overflow:visible}.page-face{min-height:570px;padding:38px 25px}.right-page{display:none}.cover{width:100%;height:100%;transform-origin:center bottom}.cover-front,.cover-back{border-radius:9px}.cover.opened{transform:rotateX(-155deg)}.spine{display:none}.names{font-size:58px}.hint{bottom:18px;white-space:normal;width:90%;line-height:1.5}.controls{bottom:70px}.cover-inner h1{font-size:68px}.left-page{border-right:0}.note{font-size:16px}.stage-label{top:20px}}
+</style>
+</head>
+<body>
+<main class="page">
+<div class="glow"></div><div class="ornament o1">✦</div><div class="ornament o2">♡</div><div class="ornament o3">✧</div><div class="ornament o4">♡</div>
+<div class="stage-label">STAGE 04.1 · THE OPENING INVITATION</div>
+<div class="scene">
+<div class="book" id="book">
+<div class="inside">
+<section class="page-face left-page">
+<div class="seal">✦ ♡ ✦</div>
+<div class="kicker">THE WEDDING OF</div>
+<div class="names">Alviyan<br>&amp;<br>Dinda</div>
+<div class="divider"></div>
+<div class="date">7 NOVEMBER 2026</div>
+<div class="divider"></div>
+<p class="note">Dengan penuh sukacita kami mengundang Anda untuk menjadi bagian dari hari istimewa dan perjalanan kami menuju selamanya.</p>
+</section>
+<section class="page-face right-page">
+<div class="invite-kicker">DENGAN MEMOHON RAHMAT TUHAN YANG MAHA ESA,<br>KAMI BERMAKSUD MENYELENGGARAKAN<br>ACARA PERNIKAHAN PUTRA DAN PUTRI KAMI</div>
+<div class="parents"><div><strong>PUTRA DARI</strong><p>Alm. Johnny Wijaya<br>&amp; Ibu Luwi Lin Nio</p></div><div><strong>PUTRI DARI</strong><p>Alm. Bahrudin<br>&amp; Ibu Diahwati Rais</p></div></div>
+<div class="couple"><div class="person">Alviyan Cahyadi, S.E., M.M.</div><div class="person" style="font-size:21px">&amp;</div><div class="person">Dinda Nurul Maulida, S.Si</div></div>
+<div class="schedule">YANG INSYA ALLAH AKAN DILAKSANAKAN PADA:</div>
+<div class="schedule-grid"><div class="item"><b>Sabtu</b><span>7<br>November 2026</span></div><div class="item"><b>Akad Nikah</b><span>08.30 WIB</span></div><div class="item"><b>Jamuan Akad</b><span>10.00 – 12.00 WIB</span></div></div>
+<div class="venue"><strong>Ibis Style Jatibening</strong><span>Jl. Caman Raya No.21, Jatibening Baru, Kec. Pondokgede,<br>Kota Bekasi, Jawa Barat 17412</span></div>
+<p class="closing">Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.</p>
+</section>
+</div>
+<div class="spine"></div>
+<div class="cover" id="cover" role="button" tabindex="0" aria-label="Buka undangan">
+<div class="cover-front"><div class="cover-inner"><div class="flourish"></div><div><div class="mini">THE WEDDING OF</div><h1>Alviyan<br>&amp;<br>Dinda</h1><div class="heart">✦ ♡ ✦</div><div class="cover-date">7 NOVEMBER 2026</div></div></div></div>
+<div class="cover-back"><div class="cover-inner"><div><div class="mini">A JOURNEY OF LOVE</div><div class="heart">✦ ♡ ✦</div></div></div></div>
+</div>
+</div>
+<div class="controls"><button class="btn" id="toggle">Buka Undangan</button><button class="btn" id="back">Kembali</button></div>
+<div class="hint" id="hint">KLIK “BUKA UNDANGAN” UNTUK MEMBUKA COVER 3D</div>
+</div>
+</main>
+<script>
+const cover=document.getElementById('cover');const toggle=document.getElementById('toggle');const hint=document.getElementById('hint');const back=document.getElementById('back');let opened=false;
+function setOpen(value){opened=value;cover.classList.toggle('opened',opened);toggle.textContent=opened?'Tutup Undangan':'Buka Undangan';hint.textContent=opened?'UNDANGAN TERBUKA · SCROLL UNTUK MELANJUTKAN':'KLIK “BUKA UNDANGAN” UNTUK MEMBUKA COVER 3D'}
+cover.addEventListener('click',()=>setOpen(!opened));cover.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setOpen(!opened)}});toggle.addEventListener('click',()=>setOpen(!opened));back.addEventListener('click',()=>location.href='./');
+const book=document.getElementById('book');book.addEventListener('pointermove',e=>{if(!opened)return;const r=book.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;book.style.transform=`rotateX(${-y*2}deg) rotateY(${x*4}deg) translateZ(12px)`});book.addEventListener('pointerleave',()=>book.style.transform='');
+</script>
+</body>
+</html>
