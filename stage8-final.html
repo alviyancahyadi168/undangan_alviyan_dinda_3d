@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7efe4">
+<title>Alviyan & Dinda — Undangan 3D Final</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f7efe4}#final{position:fixed;inset:0;width:100%;height:100%;border:0;display:block;background:#f7efe4}.loading{position:fixed;inset:0;z-index:99;display:grid;place-items:center;background:#fbf7f0;color:#a9793b;font:500 10px Montserrat,Arial,sans-serif;letter-spacing:4px;transition:opacity .8s}.loading.hide{opacity:0;pointer-events:none}.loading span{animation:pulse 1.8s ease-in-out infinite}@keyframes pulse{50%{opacity:.35}}
+</style></head>
+<body>
+<div class="loading" id="loading"><span>ALVIYAN &amp; DINDA</span></div>
+<iframe id="final" src="stage7-final.html" title="Undangan Pernikahan Alviyan dan Dinda"></iframe>
+<script>
+const frame=document.getElementById('final'),loading=document.getElementById('loading');
+const venueFix=`#venueImage{object-fit:contain!important;aspect-ratio:auto!important;width:100%!important;height:auto!important;max-height:520px!important;min-height:280px!important;background:#f7f2ea!important} .venue-photo{display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}`;
+function inject(doc){if(!doc||doc.getElementById('stage8-venue-fix'))return;const s=doc.createElement('style');s.id='stage8-venue-fix';s.textContent=venueFix;doc.head.appendChild(s)}
+function walk(win){try{inject(win.document);for(const el of win.document.querySelectorAll('iframe')){el.addEventListener('load',()=>walk(el.contentWindow),{once:true});try{walk(el.contentWindow)}catch(e){}}}catch(e){}}
+frame.addEventListener('load',()=>{setTimeout(()=>{walk(frame.contentWindow);loading.classList.add('hide')},120)});
+setTimeout(()=>{try{walk(frame.contentWindow)}catch(e){}},1000);
+</script>
+</body></html>
