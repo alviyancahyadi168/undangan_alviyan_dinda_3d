@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7efe4">
+<meta name="description" content="Undangan pernikahan Alviyan & Dinda — 7 November 2026">
+<meta name="robots" content="index,follow">
+<title>Alviyan & Dinda — Undangan Pernikahan</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f7efe4}
+#final{position:fixed;inset:0;width:100%;height:100%;border:0;display:block;background:#f7efe4}
+.loading{position:fixed;inset:0;z-index:99;display:grid;place-items:center;background:#fbf7f0;color:#a9793b;font:500 10px Montserrat,Arial,sans-serif;letter-spacing:4px;transition:opacity .8s}.loading.hide{opacity:0;pointer-events:none}.loading span{animation:pulse 1.8s ease-in-out infinite}@keyframes pulse{50%{opacity:.35}}
+</style>
+</head>
+<body>
+<div class="loading" id="loading" aria-label="Memuat undangan"><span>ALVIYAN &amp; DINDA</span></div>
+<iframe id="final" src="stage8-final.html?v=9" title="Undangan Pernikahan Alviyan dan Dinda"></iframe>
+<script>
+const frame=document.getElementById('final'),loading=document.getElementById('loading');
+const finalFix=`
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img{max-width:100%;height:auto}
+.quicknav{scrollbar-width:none}.quicknav::-webkit-scrollbar{display:none}
+#venueImage{object-fit:contain!important;width:100%!important;height:auto!important;max-height:520px!important;background:#f7f2ea!important}
+.venue-photo{display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+#cinematic .intro h1 .amp{display:block!important;font-size:.7em!important;line-height:1!important;margin:24px 0!important}
+#cinematic .intro h1 .dinda{display:block!important;margin-top:34px!important}
+@media(max-width:760px){
+ .scene{min-height:100svh}
+ .hero{min-height:100svh}
+ .card3d{width:94vw;min-height:560px}
+ .card{width:91vw;padding:52px 22px 42px}
+ .card h1{font-size:clamp(56px,18vw,88px)}
+ .quicknav{justify-content:flex-start;gap:18px;padding:12px 16px}
+ .section{padding:82px 5vw}
+ .section-head{margin-bottom:48px}
+ .gallery{display:block;padding:0 4vw}
+ .polaroid,.polaroid:nth-child(n){margin:0 auto 34px;transform:none!important;width:min(88vw,430px)}
+ .chapter{grid-template-columns:1fr;gap:38px;padding:76px 7vw;min-height:auto}
+ .chapter.reverse .chapter-photo{order:-1}
+ .chapter h2{font-size:clamp(50px,15vw,78px)}
+ .photo-frame{transform:none!important}
+ .story{min-height:58vh;padding:78px 7vw}
+ .story p{font-size:22px}
+ .invite-3d{min-height:auto;padding:20px 0 40px}
+ .invite-book{width:94vw;grid-template-columns:1fr}
+ .invite-page{min-height:auto;padding:48px 25px 42px}
+ .invite-page.left,.invite-page.right{border-radius:8px;transform:none}
+ .schedule-grid{grid-template-columns:1fr}
+ .schedule-item{min-height:0;padding:14px 8px}
+ .schedule-item+.schedule-item{border-left:0;border-top:1px solid rgba(169,121,59,.18)}
+ .parents-grid{gap:12px}
+ .person-name{font-size:28px}
+ .venue-mini strong{font-size:22px}
+ .countdown{grid-template-columns:1fr 1fr;gap:10px}
+ .countbox{padding:17px 8px}
+ .event-grid{grid-template-columns:1fr;gap:18px}
+ .event-card{padding:30px 22px}
+ .invite-names{font-size:clamp(50px,15vw,76px)}
+ .venue-photo img{max-height:none!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
+`;
+function inject(doc){
+ if(!doc)return;
+ if(!doc.getElementById('stage9-final-fix')){const s=doc.createElement('style');s.id='stage9-final-fix';s.textContent=finalFix;doc.head.appendChild(s)}
+ const venue=doc.getElementById('venueImage');
+ if(venue){venue.src='assets/venue-ibis.webp';venue.loading='eager';venue.decoding='async';venue.style.objectFit='contain'}
+ const h1=doc.querySelector('#cinematic .intro h1');
+ if(h1&&!h1.dataset.stage9Names){h1.innerHTML='<span>Alviyan</span><span class="amp">&amp;</span><span class="dinda">Dinda</span>';h1.dataset.stage9Names='1'}
+ const allImgs=doc.querySelectorAll('img');allImgs.forEach((img,i)=>{if(i>0&&!img.loading)img.loading='lazy';img.decoding='async'});
+}
+function walk(win){
+ try{
+  inject(win.document);
+  win.document.querySelectorAll('iframe').forEach(el=>{
+   el.addEventListener('load',()=>walk(el.contentWindow),{once:true});
+   try{walk(el.contentWindow)}catch(e){}
+  });
+ }catch(e){}
+}
+function ready(){
+ setTimeout(()=>{try{walk(frame.contentWindow)}catch(e){} loading.classList.add('hide')},150);
+}
+frame.addEventListener('load',ready,{once:true});
+setTimeout(()=>{try{walk(frame.contentWindow)}catch(e){}},1200);
+</script>
+</body>
+</html>
