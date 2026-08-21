@@ -5,88 +5,41 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f7efe4">
 <meta name="description" content="Undangan pernikahan Alviyan & Dinda — 7 November 2026">
-<meta name="robots" content="index,follow">
 <title>Alviyan & Dinda — Undangan Pernikahan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f7efe4}
-#final{position:fixed;inset:0;width:100%;height:100%;border:0;display:block;background:#f7efe4}
-.loading{position:fixed;inset:0;z-index:99;display:grid;place-items:center;background:#fbf7f0;color:#a9793b;font:500 10px Montserrat,Arial,sans-serif;letter-spacing:4px;transition:opacity .8s}.loading.hide{opacity:0;pointer-events:none}.loading span{animation:pulse 1.8s ease-in-out infinite}@keyframes pulse{50%{opacity:.35}}
+:root{--ivory:#fbf7f0;--cream:#eee1cf;--gold:#a9793b;--gold2:#d8bb8a;--ink:#3b2d25;--muted:#74655a;--dark:#2a211c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Montserrat,sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.055;background-image:radial-gradient(#8c6b4b .5px,transparent .5px);background-size:8px 8px}
+.top{position:fixed;z-index:70;top:0;left:0;right:0;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,253,249,.9);backdrop-filter:blur(15px);border-bottom:1px solid rgba(169,121,59,.16)}.brand{font:500 26px 'Cormorant Garamond',serif;color:#865b30}.nav{display:flex;gap:22px}.nav a{font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:#735f4c}.music{width:40px;height:40px;border:1px solid var(--gold2);border-radius:50%;background:#fffdf9;color:var(--gold);cursor:pointer}
+.hero{min-height:100svh;padding:110px 6vw 70px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 28%,#fffefa,#f7ede1 56%,#e5d2b8);perspective:1400px}.hero:before{content:"";position:absolute;width:min(72vw,950px);height:min(72vw,950px);border:1px solid rgba(169,121,59,.16);border-radius:50%}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 18%,rgba(255,255,255,.8),transparent 18%),radial-gradient(circle at 82% 75%,rgba(255,255,255,.7),transparent 22%);pointer-events:none}
+.hero-card{position:relative;z-index:2;width:min(760px,94vw);min-height:680px;padding:70px 35px 85px;display:grid;place-items:center;text-align:center;background:rgba(255,253,249,.84);border:1px solid rgba(169,121,59,.24);box-shadow:0 35px 90px rgba(72,50,29,.16);transform-style:preserve-3d;transition:transform .25s}.hero-card:before{content:"";position:absolute;inset:18px;border:1px solid rgba(169,121,59,.12)}.eyebrow{font-size:10px;letter-spacing:5px;color:var(--gold);margin:12px 0 20px}.hero h1{font:600 clamp(70px,11vw,128px)/.72 'Cormorant Garamond',serif;color:#a06f35;margin:0}.hero h1 .amp{display:block;font-size:.7em;line-height:1;margin:28px 0}.hero h1 .dinda{display:block;margin-top:18px}.date{font-size:13px;letter-spacing:5px;color:#765b42;margin:35px 0}.hero p{max-width:620px;margin:auto;font:21px/1.7 'Cormorant Garamond',serif;color:#6b5c51}.btn{display:inline-block;margin-top:28px;padding:13px 27px;border:1px solid var(--gold);border-radius:30px;background:rgba(255,253,249,.5);color:#80582b;text-decoration:none;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}.btn:hover{background:var(--gold);color:#fff}.floral{position:absolute;bottom:-35px;width:280px;height:210px;opacity:.7;background:radial-gradient(ellipse at 20% 75%,#fff 0 8%,transparent 9%),radial-gradient(ellipse at 45% 55%,#dce8ed 0 12%,transparent 13%),radial-gradient(ellipse at 72% 70%,#e7cda8 0 10%,transparent 11%)}.floral.l{left:0}.floral.r{right:0;transform:scaleX(-1)}
+section{padding:105px 6vw}.alt{background:var(--cream)}.head{text-align:center;max-width:720px;margin:0 auto 55px}.head h2{font:600 clamp(50px,7vw,82px) 'Cormorant Garamond',serif;color:#95662f;margin:0}.head p{font-size:11px;line-height:1.9;color:var(--muted)}
+.memories{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;perspective:1200px}.memory{background:#fff;padding:9px 9px 34px;box-shadow:0 20px 42px rgba(62,45,30,.13);transform:rotate(-2deg);transition:.45s}.memory:nth-child(even){transform:rotate(2deg) translateY(18px)}.memory:hover{transform:rotate(0) translateY(-10px) translateZ(30px)}.memory img{display:block;width:100%;aspect-ratio:1/1.18;object-fit:cover}.memory span{display:block;text-align:center;padding-top:10px;font:18px 'Cormorant Garamond',serif;color:#74583b}
+.events{max-width:1050px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:28px}.event{position:relative;background:#fffdf9;border:1px solid rgba(169,121,59,.17);padding:42px;text-align:center;box-shadow:0 22px 50px rgba(62,45,30,.09)}.event:before{content:"";position:absolute;inset:12px;border:1px solid rgba(169,121,59,.09)}.time{font:600 44px 'Cormorant Garamond',serif;color:#9a6934}.event h3{font-size:10px;letter-spacing:3px;color:#806346}.event p{font-size:11px;line-height:1.8;color:#6a5e56}
+.venue{background:linear-gradient(135deg,#f0e4d5,#fffdf8 50%,#e5eef2)}.venue-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}.venue-photo{padding:12px;background:#fff;border:1px solid rgba(169,121,59,.2);box-shadow:0 30px 65px rgba(62,45,30,.16);transform:rotate(-1.2deg);transition:.45s}.venue-photo:hover{transform:rotate(0) translateY(-7px)}.venue-photo img{width:100%;height:auto;max-height:620px;display:block;object-fit:contain;object-position:center;background:#f7f2ea}.venue-copy h2{font:600 clamp(52px,7vw,80px)/.88 'Cormorant Garamond',serif;color:#95662f;margin:0}.venue-copy p{font-size:12px;line-height:2;color:#6c5d53}.address{border-left:1px solid var(--gold2);padding-left:20px;margin:28px 0}.address strong{font:600 29px 'Cormorant Garamond',serif;color:#875b2e}.address span{display:block;font-size:10px;line-height:1.8;color:#6b5d53;margin-top:5px}
+.rsvp{background:#eee0cf;text-align:center}.rsvp-card{max-width:760px;margin:auto;padding:55px 35px;background:rgba(255,253,249,.75);border:1px solid rgba(169,121,59,.18);box-shadow:0 20px 55px rgba(62,45,30,.1)}.rsvp h2{font:600 64px 'Cormorant Garamond',serif;color:#95662f;margin:0}.rsvp p{font:19px/1.7 'Cormorant Garamond',serif;color:#6d5d52}.closing{min-height:55vh;display:grid;place-items:center;text-align:center;background:var(--dark);color:#f6e9dc;padding:90px 7vw}.closing h2{font:600 clamp(60px,9vw,100px) 'Cormorant Garamond',serif;color:#e7c899;margin:0}.closing p{font:20px/1.8 'Cormorant Garamond',serif;max-width:720px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}.reveal.show{opacity:1;transform:none}
+@media(max-width:760px){.nav{display:none}.top{padding:0 15px}.hero{padding:95px 4vw 55px}.hero-card{width:94vw;min-height:620px;padding:55px 20px 65px}.hero h1{font-size:clamp(62px,18vw,88px)}.hero p{font-size:19px}.memories{grid-template-columns:1fr 1fr;gap:14px}.memory:nth-child(even){transform:rotate(1deg) translateY(8px)}.memory{transform:rotate(-1deg)}section{padding:80px 5vw}.events{grid-template-columns:1fr;gap:18px}.venue-grid{grid-template-columns:1fr;gap:32px}.venue-copy{order:-1}.venue-photo{transform:none}.venue-photo img{max-height:none}.rsvp h2{font-size:52px}.closing h2{font-size:62px}}
+@media(max-width:480px){.memories{grid-template-columns:1fr}.memory,.memory:nth-child(even){transform:none}.hero h1{font-size:70px}.date{font-size:10px;letter-spacing:4px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div class="loading" id="loading" aria-label="Memuat undangan"><span>ALVIYAN &amp; DINDA</span></div>
-<iframe id="final" src="stage8-final.html?v=9" title="Undangan Pernikahan Alviyan dan Dinda"></iframe>
+<header class="top"><div class="brand">Alviyan &amp; Dinda</div><nav class="nav"><a href="#home">Home</a><a href="#memories">Memories</a><a href="#acara">Acara</a><a href="#venue">Venue</a><a href="#rsvp">RSVP</a><a href="#closing">Penutup</a></nav><button class="music" id="music" aria-label="Musik">♫</button></header>
+<main>
+<section class="hero" id="home"><div class="hero-card" id="heroCard"><div class="floral l"></div><div class="floral r"></div><div><div class="eyebrow">THE WEDDING OF</div><h1>Alviyan<span class="amp">&amp;</span><span class="dinda">Dinda</span></h1><div class="date">7 NOVEMBER 2026</div><p>Setelah lembar undangan terbuka, mari kita lanjutkan perjalanan menuju hari istimewa kami.</p><a class="btn" href="#memories">Mulai Perjalanan</a></div></div></section>
+<section id="memories"><div class="head reveal"><div class="eyebrow">OUR MEMORIES</div><h2>Memories</h2><p>Beberapa momen yang menjadi bagian dari perjalanan Alviyan &amp; Dinda.</p></div><div class="memories"><div class="memory reveal"><img src="assets/memory-1.jpeg" loading="lazy" alt="Memories Alviyan dan Dinda"><span>Our Story</span></div><div class="memory reveal"><img src="assets/memory-2.png" loading="lazy" alt="Memories Alviyan dan Dinda"><span>Moments</span></div><div class="memory reveal"><img src="assets/memory-3.png" loading="lazy" alt="Memories Alviyan dan Dinda"><span>Together</span></div><div class="memory reveal"><img src="assets/memory-4.jpeg" loading="lazy" alt="Memories Alviyan dan Dinda"><span>Forever</span></div></div></section>
+<section class="alt" id="acara"><div class="head reveal"><div class="eyebrow">THE WEDDING DAY</div><h2>Rangkaian Acara</h2><p>Sabtu, 7 November 2026</p></div><div class="events"><article class="event reveal"><div class="time">08.30</div><h3>AKAD NIKAH</h3><p>Prosesi akad nikah.</p></article><article class="event reveal"><div class="time">10.00 — 12.00</div><h3>JAMUAN AKAD</h3><p>Waktu untuk bersilaturahmi dan berbagi kebahagiaan.</p></article></div></section>
+<section class="venue" id="venue"><div class="head reveal"><div class="eyebrow">THE VENUE</div><h2>Where We Celebrate</h2></div><div class="venue-grid"><div class="venue-photo reveal"><img src="assets/venue-ibis.webp" alt="Ibis Style Jatibening" loading="eager" decoding="async"></div><div class="venue-copy reveal"><h2>Ibis Style<br>Jatibening</h2><p>Tempat kami merayakan momen istimewa bersama keluarga dan sahabat.</p><div class="address"><strong>Ibis Style Jatibening</strong><span>Jl. Caman Raya No.21, Jatibening Baru,<br>Kec. Pondokgede, Kota Bekasi,<br>Jawa Barat 17412</span></div><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ibis+Styles+Jatibening">Buka Google Maps</a></div></div></section>
+<section class="rsvp" id="rsvp"><div class="rsvp-card reveal"><div class="eyebrow">WITH LOVE</div><h2>Konfirmasi Kehadiran</h2><p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p><a class="btn" href="#closing">Lanjut ke Penutup</a></div></section>
+<section class="closing" id="closing"><div><div class="eyebrow">ALVIYAN &amp; DINDA</div><h2>See you on our day.</h2><p>Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.</p><a class="btn" href="#home" style="color:#e7c899;border-color:#d8b77f">Kembali ke Atas</a></div></section>
+</main>
 <script>
-const frame=document.getElementById('final'),loading=document.getElementById('loading');
-const finalFix=`
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{overflow-x:hidden}
-img{max-width:100%;height:auto}
-.quicknav{scrollbar-width:none}.quicknav::-webkit-scrollbar{display:none}
-#venueImage{object-fit:contain!important;width:100%!important;height:auto!important;max-height:520px!important;background:#f7f2ea!important}
-.venue-photo{display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
-#cinematic .intro h1 .amp{display:block!important;font-size:.7em!important;line-height:1!important;margin:24px 0!important}
-#cinematic .intro h1 .dinda{display:block!important;margin-top:34px!important}
-@media(max-width:760px){
- .scene{min-height:100svh}
- .hero{min-height:100svh}
- .card3d{width:94vw;min-height:560px}
- .card{width:91vw;padding:52px 22px 42px}
- .card h1{font-size:clamp(56px,18vw,88px)}
- .quicknav{justify-content:flex-start;gap:18px;padding:12px 16px}
- .section{padding:82px 5vw}
- .section-head{margin-bottom:48px}
- .gallery{display:block;padding:0 4vw}
- .polaroid,.polaroid:nth-child(n){margin:0 auto 34px;transform:none!important;width:min(88vw,430px)}
- .chapter{grid-template-columns:1fr;gap:38px;padding:76px 7vw;min-height:auto}
- .chapter.reverse .chapter-photo{order:-1}
- .chapter h2{font-size:clamp(50px,15vw,78px)}
- .photo-frame{transform:none!important}
- .story{min-height:58vh;padding:78px 7vw}
- .story p{font-size:22px}
- .invite-3d{min-height:auto;padding:20px 0 40px}
- .invite-book{width:94vw;grid-template-columns:1fr}
- .invite-page{min-height:auto;padding:48px 25px 42px}
- .invite-page.left,.invite-page.right{border-radius:8px;transform:none}
- .schedule-grid{grid-template-columns:1fr}
- .schedule-item{min-height:0;padding:14px 8px}
- .schedule-item+.schedule-item{border-left:0;border-top:1px solid rgba(169,121,59,.18)}
- .parents-grid{gap:12px}
- .person-name{font-size:28px}
- .venue-mini strong{font-size:22px}
- .countdown{grid-template-columns:1fr 1fr;gap:10px}
- .countbox{padding:17px 8px}
- .event-grid{grid-template-columns:1fr;gap:18px}
- .event-card{padding:30px 22px}
- .invite-names{font-size:clamp(50px,15vw,76px)}
- .venue-photo img{max-height:none!important}
-}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
-`;
-function inject(doc){
- if(!doc)return;
- if(!doc.getElementById('stage9-final-fix')){const s=doc.createElement('style');s.id='stage9-final-fix';s.textContent=finalFix;doc.head.appendChild(s)}
- const venue=doc.getElementById('venueImage');
- if(venue){venue.src='assets/venue-ibis.webp';venue.loading='eager';venue.decoding='async';venue.style.objectFit='contain'}
- const h1=doc.querySelector('#cinematic .intro h1');
- if(h1&&!h1.dataset.stage9Names){h1.innerHTML='<span>Alviyan</span><span class="amp">&amp;</span><span class="dinda">Dinda</span>';h1.dataset.stage9Names='1'}
- const allImgs=doc.querySelectorAll('img');allImgs.forEach((img,i)=>{if(i>0&&!img.loading)img.loading='lazy';img.decoding='async'});
-}
-function walk(win){
- try{
-  inject(win.document);
-  win.document.querySelectorAll('iframe').forEach(el=>{
-   el.addEventListener('load',()=>walk(el.contentWindow),{once:true});
-   try{walk(el.contentWindow)}catch(e){}
-  });
- }catch(e){}
-}
-function ready(){
- setTimeout(()=>{try{walk(frame.contentWindow)}catch(e){} loading.classList.add('hide')},150);
-}
-frame.addEventListener('load',ready,{once:true});
-setTimeout(()=>{try{walk(frame.contentWindow)}catch(e){}},1200);
+const card=document.getElementById('heroCard');
+document.addEventListener('mousemove',e=>{if(innerWidth<800)return;const x=(innerWidth/2-e.clientX)/70,y=(innerHeight/2-e.clientY)/85;card.style.transform=`rotateX(${y}deg) rotateY(${-x}deg)`});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const music=document.getElementById('music');let audio=null;music.addEventListener('click',()=>{if(!audio){audio=new AudioContext();const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=392;g.gain.value=.025;o.connect(g);g.connect(audio.destination);o.start();setTimeout(()=>{g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+.7);setTimeout(()=>o.stop(),800)},3500)}else if(audio.state==='suspended')audio.resume()});
 </script>
-</body>
-</html>
+</body></html>
